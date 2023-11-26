@@ -3,13 +3,13 @@
 :: Versie 3.2 22-04-2023
 :: Versie 3.3 23-04-2023
 :: Versie 3.4 28-04-2023
-:: Versie 3.5 18-11-2023
+:: Versie 3.51 11-07-2023 | Aangepast 24-11-2023 if then lussen 
 ::
 :: (C) John Tutert
 ::
 @CLS
 @ECHO OFF
-@title Installatie Applicaties versie 3.5 (18-11-2023)
+@title Installatie Applicaties versie 3.5 (11-07-2023)
 ::
 ::
 NET SESSION >nul 2>&1

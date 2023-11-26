@@ -4,12 +4,13 @@
 :: Versie 3.3 23-04-2023
 :: Versie 3.4 28-04-2023
 :: Versie 3.5 18-11-2023
+:: Versie 3.6 25-11-2023 Changelog: if.then. rondom VCRedist en DotNet.DesktopRuntime
 ::
 :: (C) John Tutert
 ::
 @CLS
 @ECHO OFF
-@title Installatie Applicaties versie 3.5 (18-11-2023)
+@title Installatie Applicaties versie 3.x (xx-xx-2023)
 ::
 ::
 NET SESSION >nul 2>&1
