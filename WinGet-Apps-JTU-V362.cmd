@@ -482,9 +482,36 @@ goto hoofdmenu
 :: =========================== Virtualisatie =============================================
 :virtualisatie 
 ::
-winget install --id Oracle.VirtualBox --accept-package-agreements --accept-source-agreements
-winget install --id VMware.WorkstationPro --accept-package-agreements --accept-source-agreements
-winget install --id Hashicorp.Vagrant --accept-package-agreements --accept-source-agreements
+:: Oracle VM Virtualbox 
+winget list -e --id Oracle.Virtualbox >nul 2>&1
+if %errorlevel% neq 0 (
+  :: Oracle.Virtualbox is NIET geïnstalleerd, installeer het
+  winget install --id Oracle.Virtualbox  --accept-package-agreements --accept-source-agreements >nul 2>&1
+) else (
+  :: Oracle.Virtualbox  is geïnstalleerd, werk het bij
+  winget upgrade --id Oracle.Virtualbox  --accept-package-agreements --accept-source-agreements >nul 2>&1
+)
+:: :: VMware.WorkstationPro 
+:: Kan niet met winget // 26-12-2023
+:: winget list --name VMware Workstation >nul 2>&1
+:: if %errorlevel% neq 0 (
+::   :: VMware.WorkstationPro is NIET geïnstalleerd, installeer het
+::   winget install --id VMware.WorkstationPro  --accept-package-agreements --accept-source-agreements >nul 2>&1
+:: ) else (
+::   :: VMware.WorkstationPro is geïnstalleerd, werk het bij
+::  winget upgrade --name VMware Workstation --accept-package-agreements --accept-source-agreements >nul 2>&1
+:: )
+:: 
+:: Hashicorp.Vagrant
+winget list -e --id Hashicorp.Vagrant >nul 2>&1
+if %errorlevel% neq 0 (
+  :: Hashicorp.Vagrant is NIET geïnstalleerd, installeer het
+  winget install --id Hashicorp.Vagrant --accept-package-agreements --accept-source-agreements >nul 2>&1
+) else (
+  :: Hashicorp.Vagrant is geïnstalleerd, werk het bij
+  winget upgrade --id Hashicorp.Vagrant --accept-package-agreements --accept-source-agreements >nul 2>&1
+)
+::
 :: 
 winget install --id Kubernetes.minikube --accept-package-agreements --accept-source-agreements
 winget install --id Kubernetes.kubectl --accept-package-agreements --accept-source-agreements
