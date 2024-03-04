@@ -1,0 +1,302 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+# 
+# Auteur John Tutert
+#
+# Gemaakt op basis van 
+# https://nicksnettravels.builttoroam.com/winget-configuration/
+#
+#
+properties:
+  configurationVersion: 0.2.0
+  resources:
+#
+#   Microsoft Visual C++ Runtimes
+#  
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VCRedist.2005.x86
+        allowPrerelease: true
+        architecture: x86
+        accept-package-agreements: true 
+        accept-source-agreements: true
+        force: true 
+      settings:
+        id: Microsoft.VCRedist.2005.x86
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VCRedist.2005.x64
+        allowPrerelease: true
+        Architecture: x64
+        accept-package-agreements: true 
+        accept-source-agreements: true
+        force: true 
+      settings:
+        id: Microsoft.VCRedist.2005.x64
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VCRedist.2008.x86
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2008.x86
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VCRedist.2008.x64
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2008.x64
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VCRedist.2010.x86
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2010.x86
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VCRedist.2010.x64
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2010.x64
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VCRedist.2012.x86
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2012.x86
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VCRedist.2012.x64
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2012.x64
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VCRedist.2013.x86
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2013.x86
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VCRedist.2013.x64
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2013.x64
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VCRedist.2015+.x86
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2015+.x86
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VCRedist.2015+.x64
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2015+.x64
+        source: winget
+#
+#   Microsoft DotNet Runtimes
+#
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.DotNet.DesktopRuntime.5
+        allowPrerelease: true
+      settings:
+        id: Microsoft.DotNet.DesktopRuntime.5
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.DotNet.DesktopRuntime.6
+        allowPrerelease: true
+      settings:
+        id: Microsoft.DotNet.DesktopRuntime.6
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.DotNet.DesktopRuntime.7
+        allowPrerelease: true
+      settings:
+        id: Microsoft.DotNet.DesktopRuntime.7
+        source: winget
+#
+#   Oracle JAVA 
+#  
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Oracle.JavaRuntimeEnvironment
+        allowPrerelease: true
+      settings:
+        id: Oracle.JavaRuntimeEnvironment
+        source: winget
+        ensure: absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Oracle.JDK.21
+        allowPrerelease: true
+      settings:
+        id: Oracle.JDK.21
+        source: winget
+        ensure: absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Oracle.JDK.20
+        allowPrerelease: true
+      settings:
+        id: Oracle.JDK.20
+        source: winget
+        ensure: absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Oracle.JDK.18
+        allowPrerelease: true
+      settings:
+        id: Oracle.JDK.18
+        source: winget
+        ensure: absent
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Oracle.JDK.17
+        allowPrerelease: true
+      settings:
+        id: Oracle.JDK.17
+        source: winget
+        ensure: absent
+#
+#   Systeem Tools
+#  
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: 7zip.7zip
+        allowPrerelease: true
+      settings:
+        id: 7zip.7zip
+        source: winget
+        ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: cURL.cURL
+        allowPrerelease: true
+      settings:
+        id: cURL.cURL
+        source: winget
+        ensure: Present
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description:  GNU.Wget2
+        allowPrerelease: true
+      settings:
+        id: GNU.Wget2
+        source: winget         
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description:  GNU.Nano
+        allowPrerelease: true
+      settings:
+        id: GNU.Nano
+        source: winget    
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description:  Hashicorp.Terraform
+        allowPrerelease: true
+      settings:
+        id: Hashicorp.Terraform
+        source: winget   
+#
+#   Developer Tools
+#  
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: GitHub.GitHubDesktop
+        allowPrerelease: true
+      settings:
+        id: GitHub.GitHubDesktop
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Notepad++.Notepad++
+        allowPrerelease: true
+      settings:
+        id: Notepad++.Notepad++
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Microsoft.VisualStudioCode.Insiders
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VisualStudioCode.Insiders
+        source: winget
+#
+#   Virtualisatie
+#  
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Oracle.VirtualBox
+        allowPrerelease: true
+      settings:
+        id: Oracle.VirtualBox
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: VMware.WorkstationPro
+        allowPrerelease: true
+      settings:
+        id: VMware.WorkstationPro
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+#      dependsOn:
+#      - Oracle.VirtualBox
+#      - VMware.WorkstationPro
+      directives:
+        description: Hashicorp.Vagrant
+        allowPrerelease: true
+      settings:
+        id: Hashicorp.Vagrant
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Canonical.Multipass
+        allowPrerelease: true
+      settings:
+        id: Canonical.Multipass
+        source: winget
+#
+#   WebBrowsers 
+#  
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Brave.Brave
+        allowPrerelease: true
+      settings:
+        id: Brave.Brave
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description:  Google.Chrome
+        allowPrerelease: true
+      settings:
+        id: Google.Chrome
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description:  Microsoft.Edge
+        allowPrerelease: true
+      settings:
+        id: Microsoft.Edge
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description:  Mozilla.Firefox
+        allowPrerelease: true
+      settings:
+        id: Mozilla.Firefox
+        source: winget         
