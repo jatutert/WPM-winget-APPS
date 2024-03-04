@@ -1,21 +1,38 @@
+::
+:: RUNTIMES
 :: 
 winget update --id Microsoft.DotNet.DesktopRuntime.5 --silent --accept-package-agreements --accept-source-agreements
 winget update --id Microsoft.DotNet.DesktopRuntime.6 --silent --accept-package-agreements --accept-source-agreements
 winget update --id Microsoft.DotNet.DesktopRuntime.7 --silent --accept-package-agreements --accept-source-agreements
 ::
-winget update --id Oracle.JavaRuntimeEnvironment -a x86 --silent --force --accept-package-agreements --accept-source-agreements
-winget update --id Oracle.JavaRuntimeEnvironment -a x64 --silent --force --accept-package-agreements --accept-source-agreements
+winget update --id Microsoft.DotNet.AspNetCore.7 --silent --accept-package-agreements --accept-source-agreements
+::
+:: winget update --id Oracle.JavaRuntimeEnvironment -a x86 --silent --force --accept-package-agreements --accept-source-agreements
+:: winget update --id Oracle.JavaRuntimeEnvironment -a x64 --silent --force --accept-package-agreements --accept-source-agreements
+::
+:: SYSTEM TOOLS
 ::
 winget update --id Microsoft.WindowsTerminal --silent --accept-package-agreements --accept-source-agreements
 winget update --id Microsoft.PowerToys --silent --accept-package-agreements --accept-source-agreements
-winget update --id JetBrains.IntelliJIDEA.Ultimate.EAP --silent --accept-package-agreements --accept-source-agreements
+:: winget update --id JetBrains.IntelliJIDEA.Ultimate.EAP --silent --accept-package-agreements --accept-source-agreements
 winget update --id cURL.cURL --silent --accept-package-agreements --accept-source-agreements
 winget update --id GNU.Wget2 --silent --accept-package-agreements --accept-source-agreements
+winget update --id Hashicorp.Terraform --silent --accept-package-agreements --accept-source-agreements
+winget update --id Hashicorp.Vagrant --silent --accept-package-agreements --accept-source-agreements
+::
+winget update --id Microsoft.VisualStudioCode.Insiders --silent --accept-package-agreements --accept-source-agreements
+:: 
+winget update --id IObit.DriverBooster --silent --accept-package-agreements --accept-source-agreements
+winget update --id WiseCleaner.WiseDiskCleaner --silent --accept-package-agreements --accept-source-agreements
+winget update --id DominikReichl.KeePass --silent --accept-package-agreements --accept-source-agreements 
 ::
 :: winget uninstall "eduVPN Client 3.4"
-winget install --id SURF.eduVPNClient --silent --accept-package-agreements --accept-source-agreements
+:: winget install --id SURF.eduVPNClient --silent --accept-package-agreements --accept-source-agreements
 ::
+:: WEB BROWSERS
+:: 
 winget update --id Brave.Brave --silent --accept-package-agreements --accept-source-agreements
+winget update --id Microsoft.Edge --silent --accept-package-agreements --accept-source-agreements
 winget update --id Google.Chrome --silent --accept-package-agreements --accept-source-agreements
 winget update --id Mozilla.Firefox --silent --accept-package-agreements --accept-source-agreements
 ::
