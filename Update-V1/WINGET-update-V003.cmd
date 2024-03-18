@@ -42,7 +42,7 @@ winget update --id WiseCleaner.WiseDiskCleaner --silent --accept-package-agreeme
 winget update --id DominikReichl.KeePass --silent --accept-package-agreements --accept-source-agreements 
 ::
 :: winget uninstall "eduVPN Client 3.4"
-:: winget install --id SURF.eduVPNClient --silent --accept-package-agreements --accept-source-agreements
+:: winget install --id SURF.eduVPNClient --silent --accept-package-agreements --accept-source-agreements --force
 ::
 :: WEB BROWSERS
 :: 
@@ -56,3 +56,4 @@ winget update --id Adobe.Acrobat.Reader.64-bit --silent --accept-package-agreeme
 winget update --id HandBrake.HandBrake --silent --accept-package-agreements --accept-source-agreements
 winget update --id Daum.PotPlayer --silent --accept-package-agreements --accept-source-agreements
 winget update --id AtomixProductions.VirtualDJ --silent --accept-package-agreements --accept-source-agreements
+winget update --id OBSProject.OBSStudio --silent --accept-package-agreements --accept-source-agreements

@@ -33,11 +33,11 @@ winget update --id cURL.cURL --silent --accept-package-agreements --accept-sourc
 winget update --id GNU.Wget2 --silent --accept-package-agreements --accept-source-agreements
 winget update --id Hashicorp.Terraform --silent --accept-package-agreements --accept-source-agreements
 winget update --id Hashicorp.Vagrant --silent --accept-package-agreements --accept-source-agreements
-winget update --id Canonical.Multipass --silent --accept-package-agreements --accept-source-agreements
+winget update --id Canonical.Multipass --silent --accept-package-agreements --accept-source-agreements --force 
 ::
 winget update --id Microsoft.VisualStudioCode.Insiders --silent --accept-package-agreements --accept-source-agreements
 :: 
-winget update --id IObit.DriverBooster --silent --accept-package-agreements --accept-source-agreements
+winget update --id IObit.DriverBooster --silent --accept-package-agreements --accept-source-agreements --uninstall-previous
 winget update --id WiseCleaner.WiseDiskCleaner --silent --accept-package-agreements --accept-source-agreements
 winget update --id DominikReichl.KeePass --silent --accept-package-agreements --accept-source-agreements 
 ::
@@ -46,13 +46,14 @@ winget update --id DominikReichl.KeePass --silent --accept-package-agreements --
 ::
 :: WEB BROWSERS
 :: 
-winget update --id Brave.Brave --silent --accept-package-agreements --accept-source-agreements
-winget update --id Microsoft.Edge --silent --accept-package-agreements --accept-source-agreements
-winget update --id Google.Chrome --silent --accept-package-agreements --accept-source-agreements
-winget update --id Mozilla.Firefox --silent --accept-package-agreements --accept-source-agreements
+winget update --id Brave.Brave --silent --accept-package-agreements --accept-source-agreements --force
+winget update --id Microsoft.Edge --silent --accept-package-agreements --accept-source-agreements --force 
+winget update --id Google.Chrome --silent --accept-package-agreements --accept-source-agreements --force 
+winget update --id Mozilla.Firefox --silent --accept-package-agreements --accept-source-agreements --force 
 ::
 winget update --id Adobe.Acrobat.Reader.64-bit --silent --accept-package-agreements --accept-source-agreements
 :: 
 winget update --id HandBrake.HandBrake --silent --accept-package-agreements --accept-source-agreements
 winget update --id Daum.PotPlayer --silent --accept-package-agreements --accept-source-agreements
 winget update --id AtomixProductions.VirtualDJ --silent --accept-package-agreements --accept-source-agreements
+winget update --id OBSProject.OBSStudio --silent --accept-package-agreements --accept-source-agreements
