@@ -33,9 +33,10 @@ winget update --id cURL.cURL --silent --accept-package-agreements --accept-sourc
 winget update --id GNU.Wget2 --silent --accept-package-agreements --accept-source-agreements
 winget update --id Hashicorp.Terraform --silent --accept-package-agreements --accept-source-agreements
 winget update --id Hashicorp.Vagrant --silent --accept-package-agreements --accept-source-agreements
-winget update --id Canonical.Multipass --silent --accept-package-agreements --accept-source-agreements --force 
+:: winget update --id Canonical.Multipass --silent --accept-package-agreements --accept-source-agreements --force 
 ::
 winget update --id Microsoft.VisualStudioCode.Insiders --silent --accept-package-agreements --accept-source-agreements
+winget update --id GitHub.GitHubDesktop --silent --accept-package-agreements --accept-source-agreements
 :: 
 winget update --id IObit.DriverBooster --silent --accept-package-agreements --accept-source-agreements --uninstall-previous
 winget update --id WiseCleaner.WiseDiskCleaner --silent --accept-package-agreements --accept-source-agreements
