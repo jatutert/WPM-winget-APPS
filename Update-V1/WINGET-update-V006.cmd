@@ -12,8 +12,8 @@
 @winget uninstall "SURF.eduVPNClient" --force
 ::
 :: Verwijderen zodat niet aanwezig is vanwege beleid 
-@winget uninstall --id Oracle.JavaRuntimeEnvironment -a x86 --silent --force --accept-package-agreements --accept-source-agreements
-@winget uninstall --id Oracle.JavaRuntimeEnvironment -a x64 --silent --force --accept-package-agreements --accept-source-agreements
+@winget uninstall --id Oracle.JavaRuntimeEnvironment --silent --force --accept-package-agreements --accept-source-agreements
+:: @winget uninstall --id Oracle.JavaRuntimeEnvironment -a x64 --silent --force --accept-package-agreements --accept-source-agreements
 ::
 :: Bijwerken
 ::
@@ -48,6 +48,8 @@
 @winget update --id Microsoft.WindowsAppRuntime.1.3 --silent --accept-package-agreements --accept-source-agreements
 @winget update --id Microsoft.WindowsAppRuntime.1.4 --silent --accept-package-agreements --accept-source-agreements
 @winget update --id Microsoft.WindowsAppRuntime.1.5 --silent --accept-package-agreements --accept-source-agreements
+:: 
+winget update --id Microsoft.AppInstaller --silent --accept-package-agreements --accept-source-agreements
 :: 
 @winget update --id Microsoft.EdgeWebView2Runtime --silent --accept-package-agreements --accept-source-agreements
 ::
