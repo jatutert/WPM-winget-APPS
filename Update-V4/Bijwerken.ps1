@@ -12,7 +12,7 @@ Get-WinGetPackage | Where {$_.Source -eq 'WinGet' `
 -AND $_.IsUpdateAvailable `
 -AND $_.Name -notlike "*Microsoft 365*" `
 -AND $_.Name -notlike "*Teams*" `
--AND $_.Name -notlike "*WEBDRIVE*" `
+-AND $_.Name -notlike "*WeBDrive*" `
 -AND $_.Name -notlike "*Foxit*" } `
 | Update-WinGetPackage `
 -Mode Silent `
@@ -22,13 +22,13 @@ Get-WinGetPackage | Where {$_.Source -eq 'WinGet' `
 # Updaten in meerdere commandos
 
 # Microsoft Visual Runtimes
-Get-WinGetPackage | Where {$_.Name -Like '*Visual*' -AND $_.Source -Like 'Winget'} | Update-WinGetPackage
+# Get-WinGetPackage | Where {$_.Name -Like '*Visual*' -AND $_.Source -Like 'Winget'} | Update-WinGetPackage
 
 # Microsoft .NET
-Get-WinGetPackage | Where {$_.Name -Like '*.NET*' -AND $_.Source -Like 'Winget'} | Update-WinGetPackage -Mode Silent
+# Get-WinGetPackage | Where {$_.Name -Like '*.NET*' -AND $_.Source -Like 'Winget'} | Update-WinGetPackage -Mode Silent
 
 # Mozilla Firefox 
-Get-WinGetPackage | Where {$_.Id -Like '*Firefox*' -AND $_.Source -Like 'Winget'} | Update-WinGetPackage -InstallerType EXE
+# Get-WinGetPackage | Where {$_.Id -Like '*Firefox*' -AND $_.Source -Like 'Winget'} | Update-WinGetPackage -InstallerType EXE
 
-#PotPlayer
-Get-WinGetPackage | Where {$_.Name -Like '*Potplayer*' -AND $_.Source -Like 'Winget'} | Update-WinGetPackage -Mode Silent
+# PotPlayer
+# Get-WinGetPackage | Where {$_.Name -Like '*Potplayer*' -AND $_.Source -Like 'Winget'} | Update-WinGetPackage -Mode Silent
