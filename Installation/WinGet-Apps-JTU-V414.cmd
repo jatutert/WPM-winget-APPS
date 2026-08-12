@@ -33,6 +33,11 @@
 )
 @REM
 @REM
+@REM Set regio naar US
+powershell -command "Set-WinHomeLocation -GeoId 244"
+@REM
+powershell -command "Start-Sleep -Seconds 20"
+@REM
 @echo Updating WinGet Packages Database
 @echo Even geduld a.u.b. ...
 @winget update
@@ -59,7 +64,7 @@ echo ==== [9] Verlaten / Einde
 @choice /C:123456789 /N /M "Maak uw keuze"
 @set hoofdmenu_antwoord=%errorlevel%
 @REM
-if %hoofdmenu_antwoord%==9 exit /b 0
+if %hoofdmenu_antwoord%==9 exit :einde
 if %hoofdmenu_antwoord%==8 goto :hoofdmenu 
 if %hoofdmenu_antwoord%==7 goto :virtualisatie
 if %hoofdmenu_antwoord%==6 goto :security
@@ -149,6 +154,7 @@ goto :systeem
 @REM
 @REM 1-5
 :utilitiessystemtools
+@REM
 winget install McAfee.MCPR --accept-package-agreements --accept-source-agreements
 winget install Piriform.CCleaner --accept-package-agreements --accept-source-agreements
 winget install EaseUS.PartitionMaster --accept-package-agreements --accept-source-agreements
@@ -157,7 +163,7 @@ winget install JAMSoftware.TreeSize.Free --accept-package-agreements --accept-so
 @REM Privacy Eraser Free
 winget install XPDLMDV4FVRFW0 --accept-package-agreements --accept-source-agreements
 @REM Microsoft PC Manager  Windows Regio moet naar US voor installatie 
-winget install 9PM860492SZD --accept-package-agreements --accept-source-agreements --locale en-US
+winget install 9PM860492SZD --accept-package-agreements --accept-source-agreements
 winget install RevoUninstaller.RevoUninstaller --accept-package-agreements --accept-source-agreements
 winget install WiseCleaner.WiseDiskCleaner --accept-package-agreements --accept-source-agreements
 winget install WiseCleaner.WiseRegistryCleaner --accept-package-agreements --accept-source-agreements
@@ -554,3 +560,9 @@ curl -s -L -o %userprofile%\Downloads\Docker_Desktop_Installer.exe https://deskt
 @REM
 goto :virtualisatie
 @REM
+
+
+:einde
+@REM Set regio naar NL
+Powershell -command "Set-WinHomeLocation -GeoId 176"
+exit /b 0
