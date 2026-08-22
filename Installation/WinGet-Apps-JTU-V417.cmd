@@ -2,17 +2,29 @@
 @cls
 @REM
 @REM
+@REM    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2
 @REM
 @REM
-@REM   TTTTTT  U    U  TTTTTT  SSSSSS  OOOOOO  FFFFFF  TTTTTT
-@REM     TT    U    U    TT    SS      O    O  FF        TT
-@REM     TT    U    U    TT    SSSSSS  O    O  FFFF      TT
-@REM     TT    U    U    TT        SS  O    O  FF        TT
-@REM     TT    UUUUUU    TT    SSSSSS  OOOOOO  FF        TT
+@REM       TTTTTT  U    U  TTTTTT  SSSSSS  OOOOOO  FFFFFF  TTTTTT
+@REM         TT    U    U    TT    SS      O    O  FF        TT
+@REM         TT    U    U    TT    SSSSSS  O    O  FFFF      TT
+@REM         TT    U    U    TT        SS  O    O  FF        TT
+@REM         TT    UUUUUU    TT    SSSSSS  OOOOOO  FF        TT
 @REM
-@REM     The Netherlands/Nederland/Niederlande/Pays Bas/Paisos Bajos
-@REM     NL EU
+@REM        TutSOFT Education and Networking Services (TENS)
 @REM
+@REM        The Netherlands/Nederland/Niederlande/Pays Bas/Paisos Bajos
+@REM        NL EU
+@REM
+@REM
+@REM    Copyright (c) 2026 John Tutert
+@REM    Permission is hereby granted, free of charge, to any person obtaining a copy
+@REM    of this software, to use, copy, modify, and distribute it for personal,
+@REM    educational, or open-source purposes, provided this notice remains intact.
+@REM    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+@REM
+@REM
+@REM    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2
 @REM
 @REM
 @REM   Windows Desktop 
@@ -22,20 +34,13 @@
 @REM   Makes your Windows ready for any use ! 
 @REM
 @REM
-@REM   For Personal and/or Education Use Only ! 
-@REM
-@REM
-@REM    Let op 
-@REM    Labels mogen maximaal 8 tekens zijn
-@REM
-@REM
 @NET SESSION >nul 2>&1
 @IF %ERRORLEVEL% NEQ 0 (
     @ECHO Script NIET gestart met Adminstrator permissies / Script not started with Adminitrator premissions ! 
     @PAUSE
     @EXIT /b 0
 )
-@REM
+@@REM
 @REM
 @REM    Set regio naar US 
 @REM    Noozakelijk voor Microsoft PC Manager 
@@ -48,12 +53,15 @@
 @winget update
 @REM
 @REM
+@winget install cURL.cURL --accept-package-agreements --accept-source-agreements
+@REM
+@REM
 :hoofdmenu
 @REM
 @CLS
 @REM
 echo ===========================================================================
-echo ==== Installatie / Updaten Applicaties Versie 4.15
+echo ==== Installatie / Updaten Applicaties 4.17
 echo ===========================================================================
 echo ====
 echo ==== [1] Systeem
@@ -69,15 +77,34 @@ echo ==== [9] Verlaten / Einde
 @choice /C:123456789 /N /M "Maak uw keuze"
 @set hoofdmenu_antwoord=%errorlevel%
 @REM
-if %hoofdmenu_antwoord%==9 exit :einde
-if %hoofdmenu_antwoord%==8 goto :hoofdmenu 
-if %hoofdmenu_antwoord%==7 goto :virtualisatie
-if %hoofdmenu_antwoord%==6 goto :security
-if %hoofdmenu_antwoord%==5 goto :office
-if %hoofdmenu_antwoord%==4 goto :multimedia
-if %hoofdmenu_antwoord%==3 goto :internet
-if %hoofdmenu_antwoord%==2 goto :development
-if %hoofdmenu_antwoord%==1 goto :systeem
+if %hoofdmenu_antwoord%==9 (
+    goto :einde
+)
+if %hoofdmenu_antwoord%==8 (
+    goto :hoofdmenu 
+)
+if %hoofdmenu_antwoord%==7 (
+    goto :virtualisatie
+)
+if %hoofdmenu_antwoord%==6 (
+    goto :security
+)
+if %hoofdmenu_antwoord%==5 (
+    goto :office
+)
+if %hoofdmenu_antwoord%==4 (
+    goto :multimedia
+)
+if %hoofdmenu_antwoord%==3 (
+    goto :internet
+)
+if %hoofdmenu_antwoord%==2 (
+    goto :development
+)
+if %hoofdmenu_antwoord%==1 (
+    goto :systeem
+)
+@REM
 goto :hoofdmenu
 @REM
 @REM
@@ -138,9 +165,8 @@ goto :systeem
 @REM
 @REM 1-3
 :other
-winget install Lenovo.SystemUpdate --accept-package-agreements --accept-source-agreements
-@REM Lenovo Vantage
-winget install 9WZDNCRFJ4MV --accept-package-agreements --accept-source-agreements
+@REM Lenovo Commercial Vantage
+winget install 9NR5B8GVVM13 --accept-package-agreements --accept-source-agreements
 @REM
 @REM
 goto :systeem 
@@ -181,7 +207,10 @@ goto :systeem
 @REM
 @REM 1-6
 :prntrtls
-start chrome https://www.epson.nl/nl_NL/support/sc/epson-expression-home-xp-4200/s/s2527?selected-tab=&selected-os=Windows+11
+curl -s -L -o %USERPROFILE%\Downloads\epson649753eu.exe https://download.epson-europe.com/pub/download/6497/epson649753eu.exe
+start "" %USERPROFILE%\Downloads\epson649753eu.exe
+@REM
+@REM start chrome https://www.epson.nl/nl_NL/support/sc/epson-expression-home-xp-4200/s/s2527?selected-tab=&selected-os=Windows+11
 @REM
 ::  winget install EPSON.PhotoPlus --accept-package-agreements --accept-source-agreements
 ::  winget install EPSON.PrinterConnectionChecker --accept-package-agreements --accept-source-agreements
@@ -241,13 +270,18 @@ winget install Microsoft.Coreutils --accept-package-agreements --accept-source-a
 @REM
 winget install EclipseAdoptium.Temurin.26.JRE  --accept-package-agreements --accept-source-agreements
 @REM
-winget install Microsoft.DotNet.DesktopRuntime.8.x64 --scope machine --accept-package-agreements --accept-source-agreements
+winget install Microsoft.DotNet.DesktopRuntime.5    --accept-package-agreements --accept-source-agreements
+winget install Microsoft.DotNet.DesktopRuntime.6    --accept-package-agreements --accept-source-agreements
+winget install Microsoft.DotNet.DesktopRuntime.7    --accept-package-agreements --accept-source-agreements
+winget install Microsoft.DotNet.DesktopRuntime.8    --accept-package-agreements --accept-source-agreements
+winget install Microsoft.DotNet.DesktopRuntime.9    --accept-package-agreements --accept-source-agreements
+winget install Microsoft.DotNet.DesktopRuntime.10   --accept-package-agreements --accept-source-agreements
 @REM
-winget install Microsoft.VCRedist.2005.x64 --scope machine --accept-package-agreements --accept-source-agreements
-winget install Microsoft.VCRedist.2008.x64 --scope machine --accept-package-agreements --accept-source-agreements
-winget install Microsoft.VCRedist.2010.x64 --scope machine --accept-package-agreements --accept-source-agreements
-winget install Microsoft.VCRedist.2012.x64 --scope machine --accept-package-agreements --accept-source-agreements
-winget install Microsoft.VCRedist.2013.x64 --scope machine --accept-package-agreements --accept-source-agreements
+winget install Microsoft.VCRedist.2005.x64  --scope machine --accept-package-agreements --accept-source-agreements
+winget install Microsoft.VCRedist.2008.x64  --scope machine --accept-package-agreements --accept-source-agreements
+winget install Microsoft.VCRedist.2010.x64  --scope machine --accept-package-agreements --accept-source-agreements
+winget install Microsoft.VCRedist.2012.x64  --scope machine --accept-package-agreements --accept-source-agreements
+winget install Microsoft.VCRedist.2013.x64  --scope machine --accept-package-agreements --accept-source-agreements
 winget install Microsoft.VCRedist.2015+.x64 --scope machine --accept-package-agreements --accept-source-agreements
 @REM
 winget Install Microsoft.VisualStudioCode --accept-package-agreements --accept-source-agreements
@@ -257,12 +291,18 @@ winget install Notepad++.Notepad++ --scope machine  --accept-package-agreements 
 winget install Microsoft.Powershell --accept-package-agreements --accept-source-agreements
 @REM
 winget install Python.Python.3.14 --accept-package-agreements --accept-source-agreements
+winget install Python.PythonInstallManager --accept-package-agreements --accept-source-agreements
+@REM    C IDE en Compiler for Windows
+winget install CodeBlocks.CodeBlocks.MinGW --accept-package-agreements --accept-source-agreements
+@REM    Linux Utilities for Windows
+winget install Cygwin.Cygwin --accept-package-agreements --accept-source-agreements
 @REM
 winget install Microsoft.Edit --scope machine --accept-package-agreements --accept-source-agreements
-winget install GNU.Nano --accept-package-agreements --accept-source-agreements
+@REM    Gebruik GIT voor Nano deze heeft namelijk nieuwere versie van Nano
+@REM    winget install GNU.Nano --accept-package-agreements --accept-source-agreements
 @REM
-winget install kubernetes.kubectl --accept-package-agreements --accept-source-agreements
 winget install kubernetes.krew --accept-package-agreements --accept-source-agreements
+winget install kubernetes.kubectl --accept-package-agreements --accept-source-agreements
 winget install kubernetes.minikube --accept-package-agreements --accept-source-agreements
 winget install wagoodman.dive --accept-package-agreements --accept-source-agreements
 @REM
@@ -313,9 +353,9 @@ goto :internet
 ::
 @REM 3-1
 :message
-@REM    Signal Desktop
+@REM Signal Desktop
 winget install XP89119P9F2PCQ --accept-package-agreements --accept-source-agreements
-@REM    WhatsAPP Desktop
+@REM WhatsAPP Desktop
 winget install 9NKSQGP7F2NH --accept-package-agreements --accept-source-agreements
 @REM
 goto :internet
@@ -338,11 +378,11 @@ goto :internet
 @REM
 @REM 3-3
 :browsers
-winget install Brave.Brave.Beta --accept-package-agreements --accept-source-agreements --locale nl-NL
-winget install Google.Chrome --accept-package-agreements --accept-source-agreements --locale nl-NL
-winget install Microsoft.Edge.Dev --accept-package-agreements --accept-source-agreements --locale nl-NL
+winget install Brave.Brave.Beta --accept-package-agreements --accept-source-agreements
+winget install Google.Chrome --accept-package-agreements --accept-source-agreements
+winget install Microsoft.Edge.Dev --accept-package-agreements --accept-source-agreements
 winget install Mozilla.Firefox.nl --accept-package-agreements --accept-source-agreements
-winget install Vivaldi.Vivaldi --accept-package-agreements --accept-source-agreements --locale nl-NL
+winget install Vivaldi.Vivaldi --accept-package-agreements --accept-source-agreements
 @REM
 goto :internet 
 @REM
@@ -387,11 +427,12 @@ goto :multimedia
 @REM 4
 :mmgame
 winget install FelixRieseberg.Windows95 --accept-package-agreements --accept-source-agreements
+winget install Microsoft.GameInput --accept-package-agreements --accept-source-agreements
 @REM
 goto :multimedia
 @REM
 @REM 4-1
-:mmimgraph
+:mmimggraph
 winget install Inkscape.Inkscape --accept-package-agreements --accept-source-agreements
 winget install WiseCleaner.WiseImageX --accept-package-agreements --accept-source-agreements
 @REM
@@ -399,6 +440,7 @@ goto :multimedia
 @REM
 @REM 4-2
 :mmtools
+@REM
 winget install GIMP.GIMP --accept-package-agreements --accept-source-agreements
 winget install HandBrake.HandBrake --accept-package-agreements --accept-source-agreements
 winget install IrfanSkiljan.IrfanView --accept-package-agreements --accept-source-agreements
@@ -452,14 +494,24 @@ goto :office
 ::
 @REM 5
 :officeprod
-winget install calibre.calibre --accept-package-agreements --accept-source-agreements
+@REM    winget install calibre.calibre --accept-package-agreements --accept-source-agreements
+@REM
+@REM    Thorium Reader voor ePUB bestanden
+winget install 9NFZP1G7M2SC --accept-package-agreements --accept-source-agreements
+@REM
+@REM    Draw.IO
 winget install JGraph.Draw --accept-package-agreements --accept-source-agreements
+@REM    PDF
 winget install Foxit.FoxitReader --accept-package-agreements --accept-source-agreements
 winget install Adobe.Acrobat.Reader.64-bit --accept-package-agreements --accept-source-agreements
+@REM    Word Excel PowerPoint
 winget install TheDocumentFoundation.LibreOffice --accept-package-agreements --accept-source-agreements --locale nl-NL
+@REM    Mail 
 winget install Mozilla.Thunderbird.nl --accept-package-agreements --accept-source-agreements
-@REM Microsoft To Do
+@REM    Microsoft To Do
 winget install 9NBLGGH5R558 --accept-package-agreements --accept-source-agreements
+@REM    Microsoft OneNote
+winget install XPFFZHVGQWWLHB --accept-package-agreements --accept-source-agreements
 @REM
 goto :office
 @REM
@@ -543,28 +595,25 @@ if %virtualisatie_menu_antwoord%==6 goto :virtualisatie
 if %virtualisatie_menu_antwoord%==5 goto :virtualisatie
 if %virtualisatie_menu_antwoord%==4 goto :virtualisatie
 if %virtualisatie_menu_antwoord%==3 goto :dddwnload
-if %virtualisatie_menu_antwoord%==2 goto :wsldwnload
+if %virtualisatie_menu_antwoord%==2 goto :wsldownload
 if %virtualisatie_menu_antwoord%==1 goto :vmwdwnload
 goto :virtualisatie
 @REM
 @REM
 :vmwdwnload
 @REM
-winget install cURL.cURL --scope machine --accept-package-agreements --accept-source-agreements
 curl -s -L -o %userprofile%\Downloads\VMware-Workstation-Full-26H1.exe https://dl.go-trex.com/VMware/VMware-Workstation-Full-26H1.exe
 @REM
 goto :virtualisatie
 @REM
-:wsldwnload
+:wsldownload
 @REM
-winget install cURL.cURL --scope machine --accept-package-agreements --accept-source-agreements
 curl -s -L -o %userprofile%\Downloads\Microsoft.WSL_2.9.4.0_x64_ARM64.msixbundle https://github.com/microsoft/WSL/releases/download/2.9.4/Microsoft.WSL_2.9.4.0_x64_ARM64.msixbundle
 @REM
 goto :virtualisatie
 @REM
 :dddwnload
 @REM
-winget install cURL.cURL --scope machine --accept-package-agreements --accept-source-agreements
 curl -s -L -o %userprofile%\Downloads\Docker_Desktop_Installer.exe https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
 @REM
 goto :virtualisatie
